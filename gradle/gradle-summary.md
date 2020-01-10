@@ -13,7 +13,7 @@
 * Grade wrapper의 설정 파일.
 * task가 실행될 때 이 파일에 명시된 여러 버전을 보고 필요에따라 새로운 버전의 wrapper 파일 등을 로컬 캐시에 다운받는다.
 
-## Build.gradle
+## build.gradle
 * 프로젝트 내에서 의존성, 플러그인 설정하는 스크립트. Groovy로 되어있다.
     * 하나의 build.gradle파일이 영향을 미치는 범위에 대해 알아볼것.
 
@@ -22,14 +22,25 @@
 * 어떤 하위 프로젝트들이 어떤 관계로 구성되어 있는지를 기술
 * Gradle은 이 파일을 보고 프로젝트를 알아서 구성함. (IDE에서 직접 프로젝트, 모듈 생성 하지 않고도…?!)
 
-## Gradle script분석
+## gradle script분석
 * gradle은 의존성관리를 위해 만들어진 DSL(Domain-Specific Language)이다. Groovy로 만들어졌지만 gradle DSL의 규칙이 조금 추가되어있다.
 * Gradle script는 1개 이상의 projects로 구성되어있고, projects는 1개 이상의 task로 구성되어있다.
     * task는 쉽게말하면 메소드 같은거다.
-    * task예시) task example1{ doLast{println ‘Hello world!!’} }
-    * task example2(dependsOn: example1) { doLast{‘Hello world!!’} } 이렇게하면 example2는 example1에 의존하게되고 example1이 먼저 실행되고 나서 2가 실행된다.
+    * task예시) 
+    ```groovy
+    task example1{
+        doLast{
+            println ‘Hello world!!’
+        } 
+    }
+    task example2(dependsOn: example1) {
+        doLast{
+            println ‘Hello world!!’
+        }
+    }``` 
+    이렇게하면 example2는 example1에 의존하게되고 example1이 먼저 실행되고 나서 2가 실행된다.
 
-## build.gradle 예시)
+## build.gradle 간단예시) // 좀 더 상세한건 개별 example 파일을 통해서 정리!
 ```groovy
 allprojects { // 최 상위 단위..? 내가 가지고있는 프로젝트에서는 이건 없다.
     repositories { // yum이나 apt처럼 필요한 library를 가져오기 위한 웹 repository // maven, jcenter, ivy모두 repository 이름이다.
@@ -53,10 +64,4 @@ allprojects { // 최 상위 단위..? 내가 가지고있는 프로젝트에서�
     }
 }
 ```
-
-ext는 def처럼 변수 선언할 때 쓰는건데 def는 해당 스크리브의 지역변수인 반면 ext로 선언한건 프로젝트 전체와 서브 프로젝트에서도 접근 가능하다.
-def var1 =1 이렇게 말고 ext.var2 = 1 이런식으로 쓰고 여러개를 한꺼번에 선언할 때는 ext{} 로 묶어서 여러개를 한꺼번에 선언할 수도 있다.
-doLast는 해당 task가 실행되고 끝날 때 실행되는거, doFirst는 말 안해도 뭔지 RG?
-
-
-
+### 깊게 들어가면 끝도 없어서 이정도 필요한만큼 정리 해놓고 알게될 때마다 계속 추가할 것!
