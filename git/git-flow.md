@@ -14,4 +14,4 @@
 * feature
 - develop에서 부터 나오며 이번 개발 목표에 해당하는 개별 기능들을 위한 브랜치
 
-![example_img](./img/git-flow.png)
+![example](./img/git-flow.png)
