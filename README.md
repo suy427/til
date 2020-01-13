@@ -5,7 +5,8 @@
 * postgresql
 ### docker
 ### git
-### gradle
-### intellij
+### java
+* gradle
+* intellij
 ### linux
 ### network-setup
