@@ -5,13 +5,15 @@
 2. list를 traverse(순회)하는 역할(list외에 다른 collection에서도 되는지 확인 해봐야지)
 
 ## EX)
-1. ```groovy
+1. 
+```groovy
    def list1 = [1,2]
    def list2 = [3,4]
    def list3 = [*list1, *list2] // list3 = [1,2,3,4]
 ```
 
-2. ```groovy
+2. 
+```groovy
    def uppers = ['A','B','C','D','E']
    def lowers = uppers*.toLowerCase() // ['A'.toLowerCase(), 'B'.toLowerCase().....]
 ```
