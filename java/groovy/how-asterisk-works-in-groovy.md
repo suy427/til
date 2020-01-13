@@ -18,3 +18,4 @@
    def lowers = uppers*.toLowerCase() // ['A'.toLowerCase(), 'B'.toLowerCase().....]
 ```
 
+## RGRG??
