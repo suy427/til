@@ -14,4 +14,16 @@
 * feature
   - develop에서 부터 나오며 이번 개발 목표에 해당하는 개별 기능들을 위한 브랜치
 
+## sequence
+
+1. master에서 시작 얘는 실제 배포판이고 tag로 1.0.0, 8.0.53 이런식으로 관리
+2. 다음 버전 개발을 위해서 develop 브랜치 땀
+3. develop이 목표하는 기능들 하나하나를 담당하는 feature 브랜치들을 땀
+4. feature브랜치들은 개발 완료됨에따라 develop으로 rebase(merge)
+5. 목표한 feature들이 모두 개발되면 release 브랜치 따서 QA들어
+6. release에서 버그를 고치면서 commit 쌓아감. 예기치 못하게 추가 기능이 필요하면 develop으로 다시 나갈 수 있음
+7. release에서 모든 QA를 마치면 develop과 master로 rebase(merge)함 --> 말그대로 release됨
+8. master에서 이미 배포되어 서비스 중인 코드에서 버그 발생할 경우 hotfix 브랜치 땀
+9. hotfix에서 고쳐진 형상은 다시 master와 develop으로...
+
 ![example](./img/git-flow.jpg)
