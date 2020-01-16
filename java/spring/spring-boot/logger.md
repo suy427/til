@@ -29,4 +29,5 @@
     
   - logback-spring.xml
     * appender : log를 어디에, 어떻게 찍을지 설정하는 부분(console, DB, stdout, file, socket 등 여러 매체에 따른 설정 가능...)   
-    * logger : 정의된 appender를 가지고 해당 logger가 사용될 package와 log level을 지정(Track > DEBUG > INFO > WARN > ERROR)    
+    * logger : 정의된 appender를 가지고 해당 logger가 사용될 package와 log level을 지정   
+      (Track > DEBUG > INFO > WARN > ERROR)    
