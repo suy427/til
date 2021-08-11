@@ -133,8 +133,6 @@ parameters:
 ```
   
 ----  
-  
-> storage부분 ref: https://m.blog.naver.com/freepsw/222005161870
 
 ## 다시 워크로드... (StatefulSet)
 가장 기본적인 워크로드로 ReplicaSet이나 Deployment(사실상 ReplicaSet은 많이 사용하지 않는듯..?)를 봤는데, 이 외에도 몇가지 워크로드가 더 있고 그 중 StatefulSet이란게 있다.
@@ -215,3 +213,10 @@ DemonSet은 모니터링 등의 용도로 클러스터 내의 모든 노드에 �
 Job은 웹 서버 같이 항상 떠있는 어플리케이션이 아니라 실행해서 완료가 되는 작업입니다. (like Batch)
 CronJob으로 반복 일정에 따라 Job을 생성할 수 있습니다.
 ```
+  
+-----
+__Reference__
+> storage: https://m.blog.naver.com/freepsw/222005161870   
+> statefulset:   
+> * https://bcho.tistory.com/1306   
+> * https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=isc0304&logNo=221885403537
